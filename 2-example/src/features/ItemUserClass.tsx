@@ -1,23 +1,59 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 interface IUser {
   name: string;
   age: number;
 }
 interface IProps {
-  userProps: IUser;
+  userProps?: IUser;
 }
 
-type State = {}
+interface IState {
+  color: string;
+}
 
 // this.props.userProps
 
-class ItemUserClass extends Component<IProps, State> {
-  state = {};
+class ItemUserClass extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+
+    this.state = {
+      color: "red",
+    };
+  }
+
+  handleClickBlue = () => {
+    this.setState({
+      color: "blue",
+    });
+  };
+
+  handleClickRed = () => {
+    this.setState({
+      color: "red",
+    });
+  };
 
   render() {
-    return <div>{this.props.userProps.name}</div>;
+    return (
+      <div className="w-50 m-auto text-center">
+        <p style={{ color: this.state.color }}>{this.state.color}</p>
+        <button
+          disabled={this.state.color === "red"}
+          onClick={this.handleClickRed}
+        >
+          Red
+        </button>
+        <button
+          disabled={this.state.color === "blue"}
+          onClick={this.handleClickBlue}
+        >
+          Blue
+        </button>
+      </div>
+    );
   }
 }
 
-export default ItemUserClass
+export default ItemUserClass;

@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import JSX from './2-example/1-JSX'
 import ItemUser from './features/ItemUser';
+import FunctionalComponent from './2-example/2-Component/FunctionalComponent';
+import State from './2-example/3-State';
+import ItemUserClass from './features/ItemUserClass';
 
 function App() {
   const listUser = [
@@ -31,12 +34,10 @@ function App() {
     // Import component con
 
   return (
-    <div className="w-50 m-auto text-center">
-      {/* <JSX /> */}
-      {listUser?.map((user, index) => (
-        <ItemUser key={index} userProps={user} />
-      ))}
-    </div>
+    <>
+      {/* <State /> */}
+      <ItemUserClass  />
+    </>
   );
 }
 

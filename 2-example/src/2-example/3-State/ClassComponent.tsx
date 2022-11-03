@@ -24,7 +24,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
     }));
   };
 
-  public render() {
+  render() {
     return (
       <>
         <h1>{this.props.title} - {this.state.number}</h1>
