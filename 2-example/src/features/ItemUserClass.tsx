@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {AiOutlineLike} from 'react-icons/ai'
 
 interface IUser {
   name: string;
@@ -38,6 +39,7 @@ class ItemUserClass extends Component<IProps, IState> {
   render() {
     return (
       <div className="w-50 m-auto text-center">
+        <AiOutlineLike />
         <p style={{ color: this.state.color }}>{this.state.color}</p>
         <button
           disabled={this.state.color === "red"}
