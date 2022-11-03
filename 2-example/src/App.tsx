@@ -1,18 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import JSX from "./2-example/1-JSX";
+
+interface IUser {
+  name : string,
+  age : number,
+  address: string
+}
 
 function App() {
-  const num : number = 12
-  const styles : object = {
-    color: 'red', fontSize:'18px'
-  }
-  console.log(num);
-  
+  const arr : Array<number> = [1,2,3,4]
+  const listUser : Array<IUser> = [
+    {
+      name: "manh",
+      age: 25,
+      address: "38 Yen Bai",
+    },
+    {
+      name: "manh1",
+      age: 26,
+      address: "38 Yen Bai",
+    },
+    {
+      name: "manh2",
+      age: 27,
+      address: "38 Yen Bai",
+    }
+  ]
+
   return (
-    <div style={styles} className="color__blue">
-      <h1>{num}</h1>
-      <h1>Headding</h1>
+    <div className="w-50 m-auto">
+      {
+        listUser?.map((user : IUser)=>{
+          return (
+            <div key={user.age}>
+              <p>{user.name}</p>
+              <p>{user.address}</p>
+            </div>
+          )
+        })
+      }
     </div>
   );
 }

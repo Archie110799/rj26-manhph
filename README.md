@@ -156,3 +156,14 @@ git branch -D …
 
 # Meet
 https://meet.google.com/zky-uria-wxt
+
+
+// Create React-app
+npx create-react-app [name] --template typescript
+// Di chuyen den source app
+cd [name]
+// Start app
+npm start
+// May o nha
+- Install npm: npm install
+- Start app: npm start
