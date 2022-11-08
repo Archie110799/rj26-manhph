@@ -9,6 +9,8 @@ import ItemUserClass from './features/ItemUserClass';
 import BtnLikeF from './features/homeworks/Session 04/BtnLikeF';
 import BtnRatingF from './features/homeworks/Session 04/BtnRatingF';
 import CaroselF from './features/homeworks/Session 04/CaroselF';
+import TabsF from './features/homeworks/Session 04/TabsF';
+import Accordions from './features/homeworks/Session 04/Accordions';
 
 function App() {
   const listUser = [
@@ -40,7 +42,7 @@ function App() {
     <>
       {/* <State /> */}
       {/* <ItemUserClass  /> */}
-      <CaroselF />
+      <Accordions />
     </>
   );
 }

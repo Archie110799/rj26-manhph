@@ -41,9 +41,7 @@ function CaroselF() {
           Prev
         </div>
         <div className="col">
-          {images?.map((item) => {
-            return item.id === indexImage ? item.url : null;
-          })}
+          {images?.map((item) => (item.id === indexImage ? item.url : null))}
         </div>
         <div className="col-2" onClick={handleNext}>
           Next
