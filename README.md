@@ -155,7 +155,7 @@ git remote add origin <remote repository URL>
 git branch -D …
 
 # Meet
-https://meet.google.com/dkr-hnuv-iza
+https://meet.google.com/ngw-hynw-xve
 
 
 // Create React-app

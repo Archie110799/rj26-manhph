@@ -6,6 +6,9 @@ import ItemUser from './features/ItemUser';
 import FunctionalComponent from './2-example/2-Component/FunctionalComponent';
 import State from './2-example/3-State';
 import ItemUserClass from './features/ItemUserClass';
+import BtnLikeF from './features/homeworks/Session 04/BtnLikeF';
+import BtnRatingF from './features/homeworks/Session 04/BtnRatingF';
+import CaroselF from './features/homeworks/Session 04/CaroselF';
 
 function App() {
   const listUser = [
@@ -36,7 +39,8 @@ function App() {
   return (
     <>
       {/* <State /> */}
-      <ItemUserClass  />
+      {/* <ItemUserClass  /> */}
+      <CaroselF />
     </>
   );
 }
