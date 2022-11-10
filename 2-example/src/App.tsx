@@ -11,6 +11,8 @@ import BtnRatingF from './features/homeworks/Session 04/BtnRatingF';
 import CaroselF from './features/homeworks/Session 04/CaroselF';
 import TabsF from './features/homeworks/Session 04/TabsF';
 import Accordions from './features/homeworks/Session 04/Accordions';
+import Bt1 from './features/homeworks/Session 05/Bt1';
+import Bt2 from './features/homeworks/Session 05/Bt2';
 
 function App() {
   const listUser = [
@@ -42,7 +44,9 @@ function App() {
     <>
       {/* <State /> */}
       {/* <ItemUserClass  /> */}
-      <Accordions />
+      {/* <Accordions /> */}
+      {/* <Bt1 /> */}
+      <Bt2 />
     </>
   );
 }
