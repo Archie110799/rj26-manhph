@@ -16,6 +16,7 @@ import Bt2 from './features/homeworks/Session 05/Bt2';
 import FormsExamples from './2-example/6-FormsExamples';
 import FormExF from './features/homeworks/Session 06/FormExF';
 import ListUser from './components/ListUser';
+import FormUser from './components/FormUser';
 
 function App() {
   const listUser = [
@@ -52,7 +53,8 @@ function App() {
       {/* <Bt2 /> */}
       {/* <FormsExamples /> */}
       {/* <FormExF /> */}
-      <ListUser />
+      {/* <ListUser /> */}
+      <FormUser />
     </>
   );
 }

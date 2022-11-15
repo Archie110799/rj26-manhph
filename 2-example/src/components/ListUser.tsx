@@ -11,12 +11,10 @@ function ListUser() {
     getListUser();
   }, []); // 1 lan , sau lan first-render
   const getListUser = () => {
-    fetch(
-      "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users?page=1&limit=10",
-      {
-        method: "GET",
-      }
-    )
+    let url = "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users";
+    fetch(url, {
+      method: "GET",
+    })
       .then((response) => response.json())
       .then((data) => {
         setListUser(data);
@@ -26,6 +24,36 @@ function ListUser() {
         console.error("Error:", error);
       });
   };
+  // viet func handle Delete (nhan userId tuong ung vs row)
+  // call API delete user
+  // call xoa API thanh cong -> update ListUser (setState -> re-render)
+  const handleDelete = (userId: number) => {
+    console.log("delete", userId);
+    let data = {
+      name: "giatri input name",
+      avatar: "gia tri cua input avatar",
+    };
+    let url =
+      "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + userId;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // update list user -> call getListUser();
+        getListUser();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  
   return (
     <table className="table">
       <thead>
@@ -45,7 +73,7 @@ function ListUser() {
               <td className="text-break">{user.avatar}</td>
               <td>
                 <button>Detail</button>
-                <button>Delete</button>
+                <button onClick={() => handleDelete(user.id)}>Delete</button>
               </td>
             </tr>
           );
