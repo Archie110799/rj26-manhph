@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
+// name, avatar, address
 function SimpleExample() {
   const [name, setName] = useState("Peter");
-  const [gender, setGender] = React.useState("unknown");
-  const [children, setChildren] = React.useState(true);
-  const [country, setCountry] = React.useState("VN");
+  const [gender, setGender] = useState("unknown");
+  const [children, setChildren] = useState(true);
+  const [country, setCountry] = useState("VN");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // event of form
@@ -29,8 +30,10 @@ function SimpleExample() {
           <input
             placeholder="Name"
             type="text"
+            name="userName"
             value={name}
             onChange={(e) => {
+              console.log(e.target.name);
               setName(e.target.value);
             }}
           />

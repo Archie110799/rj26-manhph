@@ -26,6 +26,7 @@ function RegisterFormWithYup() {
       console.log(values);
     },
   });
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     formik.setFieldValue(e.target.name, e.target.value);

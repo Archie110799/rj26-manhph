@@ -13,6 +13,8 @@ import TabsF from './features/homeworks/Session 04/TabsF';
 import Accordions from './features/homeworks/Session 04/Accordions';
 import Bt1 from './features/homeworks/Session 05/Bt1';
 import Bt2 from './features/homeworks/Session 05/Bt2';
+import FormsExamples from './2-example/6-FormsExamples';
+import FormExF from './features/homeworks/Session 06/FormExF';
 
 function App() {
   const listUser = [
@@ -46,7 +48,9 @@ function App() {
       {/* <ItemUserClass  /> */}
       {/* <Accordions /> */}
       {/* <Bt1 /> */}
-      <Bt2 />
+      {/* <Bt2 /> */}
+      {/* <FormsExamples /> */}
+      <FormExF />
     </>
   );
 }
