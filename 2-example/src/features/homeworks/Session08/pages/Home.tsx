@@ -3,19 +3,19 @@ import React from "react";
 const images = [
   {
     name: "image 1",
-    src: "/images/1.jpeg",
+    src: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/626.jpg",
   },
   {
     name: "image 2",
-    src: "/images/2.jpeg",
+    src: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1033.jpg",
   },
   {
     name: "image 3",
-    src: "/images/3.jpeg",
+    src: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/874.jpg",
   },
   {
     name: "image 4",
-    src: "/images/4.jpeg",
+    src: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/628.jpg",
   },
 ];
 
@@ -38,6 +38,7 @@ function Home() {
                 className="d-block w-100"
                 height={500}
                 alt={ima?.name}
+                style={ {objectFit:'contain'}}
               />
             </div>
           );

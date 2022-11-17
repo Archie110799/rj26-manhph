@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 // dump data listUser = [{},{},{}]
 // dua vao listUser.map -> render UI nhu requirement
 // Thay doi data listUser: tu data dump -> data res API
 // call API getListUser o componentWillMount
 // call API -> res data -> setListUser(data)
 function ListUser() {
+  const navigate = useNavigate();
   const [listUser, setListUser] = useState([]);
   // du lieu gia dump
   useEffect(() => {
@@ -53,6 +56,11 @@ function ListUser() {
       });
   };
 
+  const gotoDetail = (userId : number) =>{
+    console.log(userId);
+    navigate('/detail/' + userId);
+  }
+
   
   return (
     <table className="table">
@@ -72,7 +80,8 @@ function ListUser() {
               <td>{user.name}</td>
               <td className="text-break">{user.avatar}</td>
               <td>
-                <button>Detail</button>
+                <button onClick={()=>gotoDetail(user.id)}>Detail</button>
+                {/* <Link to={'/detail/' +user.id}>Detail</Link> */}
                 <button onClick={() => handleDelete(user.id)}>Delete</button>
               </td>
             </tr>

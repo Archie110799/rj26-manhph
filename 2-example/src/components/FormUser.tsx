@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 // form  user { name , avatar}
 // component FormUser
 // Create Form
@@ -11,6 +12,28 @@ import React, { useState } from "react";
 function FormUser() {
   const [userName, setUserName] = useState();
   const [userAvatar, setUserAvatar] = useState();
+  let params = useParams();
+  useEffect(() => {
+    getUser(params.id);
+  }, []);
+
+  const getUser = (userId: string | undefined) => {
+    let url =
+      "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + userId;
+    fetch(url, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setUserName(data?.name)
+        setUserAvatar(data?.avatar)
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+  
   const handleSubmit = (event: any) => {
     event.preventDefault();
     console.log("submit", userName, userAvatar);
@@ -19,7 +42,27 @@ function FormUser() {
       name: userName,
       avatar: userAvatar,
     };
-    postUser(data)
+    if(params.id){
+      updateUser(data, params.id)
+    }else{
+      postUser(data)
+    }
+    
+  };
+
+  const updateUser = (data : any, userId : string) => {
+    // call api postUser
+    let url = "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + userId;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
   };
 
   const postUser = (data : any) => {
@@ -36,6 +79,7 @@ function FormUser() {
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
+
   const handleChange = (event: any) => {
     switch (event.target.name) {
       case "name":
