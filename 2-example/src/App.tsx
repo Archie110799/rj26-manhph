@@ -17,6 +17,7 @@ import FormsExamples from './2-example/6-FormsExamples';
 import FormExF from './features/homeworks/Session 06/FormExF';
 import ListUser from './components/ListUser';
 import FormUser from './components/FormUser';
+import ReactRouterExamples from './2-example/8-ReactRouterExamples';
 
 function App() {
   const listUser = [
@@ -54,7 +55,8 @@ function App() {
       {/* <FormsExamples /> */}
       {/* <FormExF /> */}
       {/* <ListUser /> */}
-      <FormUser />
+      {/* <FormUser /> */}
+      <ReactRouterExamples />
     </>
   );
 }
