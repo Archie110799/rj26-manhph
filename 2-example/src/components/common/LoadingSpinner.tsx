@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { State } from "../../2-example/9-Redux/rootReducer";
+import { State } from "../../2-example/9-Redux-Ad/rootReducer";
 
 const LoadingSpinner = () => {
   const { loading } = useSelector((state: State) => state.common);

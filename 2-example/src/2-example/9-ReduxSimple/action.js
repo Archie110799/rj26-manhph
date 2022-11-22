@@ -1,12 +1,15 @@
+import { selectUser } from "../9-ReduxExamples/UsersApp/actions";
+
 export const getSuppliersAsync = () => {
   return (dispatch) => {
     dispatch(getSuppliers_Pending());
 
     fetch(
-      "https://62ce2903066bd2b699309018.mockapi.io/api/v1/suppliers/?page=4&limit=15"
+      "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users"
     )
       .then((response) => response.json())
       .then((data) => {
+        // setSuppliers(data)
         dispatch(getSuppliers_Success(data));
       })
       .catch((error) => {
@@ -37,7 +40,7 @@ export const deleteSupplierAsync = (id) => {
   return (dispatch) => {
     dispatch(deleteSupplier_Pending());
     fetch(
-      "https://62ce2903066bd2b699309018.mockapi.io/api/v1/suppliers/" + id,
+      "https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/" + id,
       {
         method: "DELETE",
       }

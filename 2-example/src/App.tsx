@@ -20,8 +20,9 @@ import FormUser from './components/FormUser';
 import ReactRouterExamples from './2-example/8-ReactRouterExamples';
 import Session08 from './features/homeworks/Session08';
 import ConfigRoute from './components/ConfigRoute';
-import Redux from './2-example/9-Redux';
-import End from './2-example/ReduxSimple';
+import Redux from './2-example/9-Redux-Ad';
+import End from './2-example/9-ReduxSimple';
+import ReduxTs from './2-example/9-ReduxTs/ReduxTs';
 
 function App() {
   const listUser = [
@@ -64,7 +65,8 @@ function App() {
       {/* <Session08 /> */}
       {/* <ConfigRoute /> */}
       {/* <Redux /> */}
-      <End />
+      {/* <End /> */}
+      <ReduxTs />
     </>
   );
 }

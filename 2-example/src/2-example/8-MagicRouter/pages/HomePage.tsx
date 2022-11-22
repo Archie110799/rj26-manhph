@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IUser } from "../../9-Redux/interfaces/common";
+import { IUser } from "../../9-Redux-Ad/interfaces/common";
 
 function HomePage() {
   const navigate = useNavigate();

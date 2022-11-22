@@ -7,11 +7,22 @@ const renderRefactor = () => {
 }
 
 export default function SupList() {
+  // const [suppliers, setSuppliers] = useState([])
   const dispatch = useDispatch();
   const { suppliers, loading } = useSelector((state) => state.supplierReducer);
   useEffect(() => {
+    // cpnWillMount
+    // getListSuppliers()
     dispatch(getSuppliersAsync());
   }, []);
+
+  const getListSuppliers = () =>{
+    //fetch(URL)
+        //  .then -> json
+        //  .then -> success ->setSuppliers(data)
+        //  .catch -> error
+  }
+
   return (
     <>
       {loading && <small className="text-danger">Loadding...</small>}
