@@ -30,7 +30,7 @@ function ReduxUserList() {
 
   return (
     <>
-      {loading && <p>Loadding...</p>}
+      {loading ? <p>Loadding...</p> : null}
       {users?.map((user) => (
         <p key={user.id}>{user.name}</p>
       ))}
