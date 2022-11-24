@@ -37,7 +37,7 @@ function ReduxUserList() {
       {loading ? <p>Loadding...</p> : null}
       <div className="d-flex justify-content-around flex-wrap">
         {users?.map((user) => (
-          <div key={user.id} className="card w-25 m-3">
+          <div key={user.id} className="card w-25 m-1">
             <img src={user.avatar} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title text-truncate">{user.name}</h5>
